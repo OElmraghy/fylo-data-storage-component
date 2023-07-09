@@ -1,0 +1,232 @@
+:root {
+  --primary-color: hsl(229, 7%, 55%);
+  --second-color: hsl(243, 100%, 93%);
+  --box-color: hsl(228, 56%, 26%);
+  --bg-color: hsl(229, 57%, 11%);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Raleway", sans-serif;
+  font-size: 14px;
+  background-color: var(--bg-color);
+}
+
+main {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url(../images/bg-desktop.png);
+  background-position: bottom right;
+  background-repeat: no-repeat;
+}
+
+@media (max-width: 850px) {
+  main {
+    background-image: url(../images/bg-mobile.png);
+    background-position: center center;
+  }
+}
+
+.container {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-end;
+  width: 900px;
+  margin: 2rem;
+}
+
+@media (max-width: 850px) {
+  .container {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+  }
+}
+
+.fylo {
+  background-color: var(--box-color);
+  padding: 2.5rem;
+  width: 350px;
+  border-radius: 0.6rem 5rem 0.6rem 0.6rem;
+  -webkit-border-radius: 0.6rem 5rem 0.6rem 0.6rem;
+  -moz-border-radius: 0.6rem 5rem 0.6rem 0.6rem;
+  -ms-border-radius: 0.6rem 5rem 0.6rem 0.6rem;
+  -o-border-radius: 0.6rem 5rem 0.6rem 0.6rem;
+}
+
+.fylo > img {
+  margin-bottom: 2rem;
+}
+
+.fylo ul {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.fylo ul li {
+  background-color: var(--bg-color);
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border-radius: 0.8rem;
+  -webkit-border-radius: 0.8rem;
+  -moz-border-radius: 0.8rem;
+  -ms-border-radius: 0.8rem;
+  -o-border-radius: 0.8rem;
+}
+
+.storage {
+  flex: 1;
+  background-color: var(--box-color);
+  padding: 2.5rem;
+  height: 160px;
+  border-radius: 0.6rem;
+  -webkit-border-radius: 0.6rem;
+  -moz-border-radius: 0.6rem;
+  -ms-border-radius: 0.6rem;
+  -o-border-radius: 0.6rem;
+}
+
+@media (max-width: 850px) {
+  .storage {
+    width: 350px;
+    padding-bottom: 5rem;
+  }
+}
+
+.storage h1 {
+  color: var(--second-color);
+  margin-bottom: 1.5rem;
+  font-size: 1em;
+  font-weight: normal;
+}
+
+.storage h1 span {
+  font-weight: bold;
+}
+
+.storage .usage {
+  position: relative;
+  height: 12px;
+  background-color: var(--bg-color);
+  border-radius: 1rem;
+  -webkit-border-radius: 1rem;
+  -moz-border-radius: 1rem;
+  -ms-border-radius: 1rem;
+  -o-border-radius: 1rem;
+  outline: 2px solid var(--bg-color);
+}
+
+.storage .usage .progress {
+  position: absolute;
+  height: 100%;
+  background-image: linear-gradient(
+    to right,
+    hsl(6, 100%, 80%),
+    hsl(335, 100%, 65%)
+  );
+  border-radius: 1rem;
+  -webkit-border-radius: 1rem;
+  -moz-border-radius: 1rem;
+  -ms-border-radius: 1rem;
+  -o-border-radius: 1rem;
+}
+
+.storage .usage .progress::before {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background-color: white;
+  right: 2px;
+  top: 50%;
+  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+
+.storage .usage .starting {
+  position: absolute;
+  color: var(--second-color);
+  left: 0;
+  bottom: -25px;
+  font-weight: bold;
+  font-size: 12px;
+}
+
+.storage .usage .ending {
+  position: absolute;
+  color: var(--second-color);
+  right: 0;
+  bottom: -25px;
+  font-weight: bold;
+  font-size: 12px;
+}
+
+.storage .remaining {
+  position: absolute;
+  background-color: white;
+  font-size: 2.3rem;
+  font-weight: bold;
+  padding: 0.6rem 1rem;
+  right: 0;
+  top: -120px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-radius: 0.6rem;
+  -webkit-border-radius: 0.6rem;
+  -moz-border-radius: 0.6rem;
+  -ms-border-radius: 0.6rem;
+  -o-border-radius: 0.6rem;
+}
+
+.storage .remaining::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: -20px;
+  border-width: 25px;
+  border-style: solid;
+  border-color: transparent white transparent transparent;
+}
+
+.storage .remaining span {
+  font-size: 0.8rem;
+  color: var(--primary-color);
+}
+
+@media (max-width: 850px) {
+  .storage .remaining {
+    width: 60%;
+    top: 60px;
+    left: 50%;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+  }
+  .storage .remaining::after {
+    border: none;
+  }
+}
